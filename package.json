@@ -1,0 +1,28 @@
+{
+  "name": "single-file-component",
+  "version": "1.0.0",
+  "description": "Reusable single file component that uses pure HTML CSS JS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "opn http://localhost:5000 && nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "resuable",
+    "single",
+    "component",
+    "pure",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "ronaldaug",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "opn-cli": "^4.0.0"
+  }
+}
