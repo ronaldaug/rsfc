@@ -21,6 +21,7 @@ body{
     z-index:9999;
     max-width:100%;
   }
+
   .fw-btn{
       padding:6px 24px;
       border-radius:18px;
@@ -29,6 +30,11 @@ body{
       border:0;
       color:#fff;
   }
+  .close-btn{
+    top: 0;
+    position: absolute;
+    right: 0;
+}
   .fw-btn:hover{
     background:rgb(27, 155, 172);
     cursor:pointer;

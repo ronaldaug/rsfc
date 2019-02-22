@@ -5,7 +5,14 @@
 #### How it work?
 > RSFC merge all your **.html** files from the components directory and generate a website.
 
-How to use it?
+<img width="600" src="https://res.cloudinary.com/dpnea22ek/image/upload/v1550853895/one.png">
+
+----
+
+<img width="600" src="https://res.cloudinary.com/dpnea22ek/image/upload/v1550853896/two.png">
+
+
+#### How to use it?
 - Download RSFC
 -  Put **.html** files (components) into `/components/` directory.
 - `npm install`
