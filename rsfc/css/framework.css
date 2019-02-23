@@ -9,6 +9,10 @@ body{
    font-family: 'Roboto', sans-serif;
     font-weight:300;
   }
+  .hidden-css,.hidden-js{
+    opacity:0;
+    visibility: hidden;
+  }
   .edit-source{
     padding-top:20px;
     position:fixed;

@@ -117,7 +117,7 @@ var htmlData = '';
     });
     htmlData += htmlSections.join("");
     htmlData += `
-    <!-- all JS scripts -->
+    <!-- all JS Links -->
     `;
     const ifNoJS = jsArr||[];
     htmlData += ifNoJS.join("\n");
@@ -268,7 +268,7 @@ return `
   ${css}
 `;
 })
-  return CSScontent(csscodes) + CSSdata.join('')
+  return CSScontent(csscodes) +  Config.globalCSS + CSSdata.join('') + Config.overwriteCSS;
 }
 
 
@@ -323,12 +323,11 @@ const  download = () =>{
 zip.file("index.html", htmlEditor.getValue());
 
  // create js folder
- let jsFolder = zip.folder("js");
-jsFolder.file("main.js",  jsEditor.getValue());
+ let assetFolder = zip.folder("assets");
+ assetFolder.file("js/main.js",  jsEditor.getValue());
 
  // create css folder
- let cssFolder = zip.folder("css");
-cssFolder.file("style.css", cssEditor.getValue());
+ assetFolder.file("css/style.css", cssEditor.getValue());
 
   zip.generateAsync({type:"blob"})
     .then(function(content) {
