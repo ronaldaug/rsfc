@@ -5,8 +5,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Resuable component - puer HTML CSS JS</title>
-     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/tomorrow-night-blue.min.css">
+     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+     <link rel="stylesheet" href="rsfc/css/tomorrow-night-blue.min.css">
      
      <link rel="stylesheet" href="rsfc/css/framework.css">
 </head>
@@ -31,8 +31,12 @@
     </div>
  
   </div>
-  <div class="container">
-      <iframe id="preview-frame" scrolling="yes"></iframe>
+  <a class="device" onclick="changeFrame('desktop')"><img src="rsfc/images/icons/desktop.png" alt="desktop"></a>
+  <a class="device" onclick="changeFrame('tablet')"><img src="rsfc/images/icons/tablet.png" alt="tablet"></a>
+  <a class="device" onclick="changeFrame('horizontal-mobile')"><img src="rsfc/images/icons/horizontal-mobile.png" alt="horizontal-mobile"></a>
+  <a class="device" onclick="changeFrame('mobile')"><img src="rsfc/images/icons/mobile.png" alt="mobile"></a>
+  <div class="container" style="width:100%;">
+        <iframe id="preview-frame" scrolling="yes"></iframe>
   </div>
 
   <div class="setting" style="transform:translateX(100%);box-shadow:none;">
@@ -75,6 +79,9 @@
 <script src="rsfc/js/ace.js"></script>
 <script src="rsfc/js/filesaver.min.js"></script>
 <script src="rsfc/js/jszip.min.js"></script>
+<script src="rsfc/js/beautify-css.min.js"></script>
+<script src="rsfc/js/beautify-html.min.js"></script>
+<script src="rsfc/js/beautify.min.js"></script>
 <script src="rsfc/js/html5sortable.min.js"></script>
 <script src="rsfc/js/framework.js"></script>
 

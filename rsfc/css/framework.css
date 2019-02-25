@@ -139,6 +139,8 @@ body{
    }
    .setting .sort-table .left-table,
    .setting .sort-table .right-table{
+    max-height:400px;
+    overflow-y:scroll;
     flex:1;
     padding:10px;
    }
@@ -185,10 +187,16 @@ body{
    }
 
 /* preview */
+.device{
+    margin:10px;
+}
+.device:hover{
+    cursor:pointer;
+}
 .container{
-    margin:20px;
-    max-width:1400px;
-    height:80vh;
+    transition: all ease-in-out 0.4s;
+    margin:0;
+    height:100vh;
     border:1px solid #ddd;
 }
 .container iframe{

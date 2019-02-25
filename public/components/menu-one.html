@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+<style>
+#menu-one nav {
+  background-color: #4c4ea6;
+  transition: all ease-in-out 1s; }
+
+#menu-one .brand-logo {
+  margin-top: 10px; }
+</style>
+</head>
+<body>
+    <section id="menu-one">
+        <nav>
+          <div class="container">
+            <div class="nav-wrapper">
+              <a  href="#" class="brand-logo white-text">
+<svg width="40px" height="40px" viewBox="114 63 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+<desc>Created with Sketch.</desc>
+<defs></defs>
+<g id="copyright" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(114.000000, 63.000000)">
+<path d="M20,0 L15.1710156,20 L20,40 C31.0457031,40 40,31.0457031 40,20 C40,8.95429688 31.0457031,0 20,0 L20,0 Z" id="Shape" fill="#4C4EA6"></path>
+<path d="M0,20 C0,31.0457031 8.95429687,40 20,40 L20,0 C8.95429687,0 0,8.95429687 0,20 L0,20 Z" id="Shape" fill="#FFFFFF"></path>
+<path d="M20,2.41445312 L20,37.5854688 C29.7121875,37.5854688 37.5855469,29.7121875 37.5855469,19.9999219 C37.5855469,10.2876563 29.7121875,2.41445312 20,2.41445312 L20,2.41445312 Z" id="Shape" fill="#DEF1FF"></path>
+<path d="M35.1710156,20 C35.1710156,10.2878125 28.37875,2.41445312 20,2.41445312 C10.2878125,2.41445312 2.41445312,10.2878125 2.41445312,20 C2.41445312,29.7121875 10.2878125,37.5855469 20,37.5855469 C28.37875,37.5855469 35.1710156,29.7121875 35.1710156,20 L35.1710156,20 Z" id="Shape" fill="#FFFFFF"></path>
+<path d="M20,30.9054688 C16.9157031,30.9054688 14.4064063,28.3961719 14.4064063,25.311875 L14.4064063,14.688125 C14.4064063,11.6038281 16.9157031,9.09453125 20,9.09453125 C23.0842969,9.09453125 25.5935938,11.6038281 25.5935938,14.688125 C25.5935938,15.5771094 24.8729688,16.2978125 23.9839063,16.2978125 C23.0948438,16.2978125 22.3742188,15.5771875 22.3742188,14.688125 C22.3742188,13.3789063 21.3092188,12.3139063 20,12.3139063 C18.6907813,12.3139063 17.6257813,13.3789063 17.6257813,14.688125 L17.6257813,25.311875 C17.6257813,26.6210938 18.6907813,27.6860938 20,27.6860938 C21.3092188,27.6860938 22.3742188,26.6210938 22.3742188,25.311875 C22.3742188,24.4228906 23.0948438,23.7021875 23.9839063,23.7021875 C24.8729688,23.7021875 25.5935938,24.4228125 25.5935938,25.311875 C25.5935938,28.3961719 23.0842969,30.9054688 20,30.9054688 L20,30.9054688 Z" id="Shape" fill="#4C4EA6"></path>
+</g>
+</svg></a>
+              <a  href="#" onclick="return false;" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+               <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#header-one" class="active white-text">Home</a>
+                  </li>
+                  <li>
+                    <a href="#about-one" class="white-text">About</a>
+                  </li>
+                  <li>
+                    <a href="#contact-one" class="white-text">Contact</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+<ul class="sidenav" id="mobile-nav">
+        <li>
+          <a href="#header-one">Home</a>
+        </li>
+        <li>
+          <a href="#about-one">About</a>
+        </li>
+        <li>
+          <a href="#contact-one">Contact</a>
+        </li>
+      </ul>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// navabar collaspe	
+const sideNav = document.querySelector('.sidenav');
+M.Sidenav.init(sideNav, {});
+
+var navbar = document.querySelector('section#menu-one nav');
+var scrolling = true;
+
+function ShowHideMenuOnScroll() {
+  if (window.scrollY < 20){
+      navbar.setAttribute('style','position:static;opacity:0;transform:translateY(-100%)');
+    }
+  if (window.scrollY > 700){
+        navbar.setAttribute('style','position:fixed;opacity:1;');
+  }else{
+      navbar.setAttribute('style','position:fixed;opacity:0;');
+  }
+  if(window.scrollY == 0){
+      navbar.setAttribute('style','position:static;opacity:1;transform:translateY(0%)');
+  }
+}
+
+window.addEventListener("scroll", ShowHideMenuOnScroll);
+});
+</script>
+</body>
+</html>

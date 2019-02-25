@@ -122,7 +122,7 @@ var htmlData = '';
     const ifNoJS = jsArr||[];
     htmlData += ifNoJS.join("\n");
     htmlData += Config.htmlEnd;
-    return htmlData;
+    return html_beautify(htmlData);
 }
 
 // ================
@@ -283,8 +283,9 @@ jscodes.forEach((js,i)=>{
 //  ${i+1} - ${getName(files[i])}`;
   })
   let endContent = `
+// Global JS
 // ==========================`
-  return jscData + endContent
+  return css_beautify(jscData + endContent);
 }
 
 // Table of content for CSS
@@ -315,7 +316,7 @@ return `
   ${js}
 `;
 })
-return JScontent(jscodes) + jsData.join("");
+return js_beautify(JScontent(jscodes) + jsData.join("")+Config.globalJS);
 }
 
 const  download = () =>{
@@ -433,4 +434,22 @@ document.querySelector(".edit-source").setAttribute("style","transform:translate
 function closePreview(){
   document.querySelector(".edit-source").setAttribute("style","transform:translateY(-180%);opacity:0;");
   appendToIframe();
+}
+
+function changeFrame(device){
+  let contain = document.querySelector(".container");
+  switch(device){
+    case 'tablet':
+    contain.setAttribute("style", "width:992px;margin:auto;")
+    return;
+    case 'horizontal-mobile':
+    contain.setAttribute("style", "width:768px;margin:auto;")
+    return;
+    case 'mobile':
+    contain.setAttribute("style", "width:576px;margin:auto;")
+    return;
+    default:
+    contain.setAttribute("style", "width:100%")
+    return;
+  }
 }
