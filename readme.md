@@ -52,6 +52,7 @@ Will it crash or confuse with HTML headers codes and external `js/css` links?
 ---
 ## Tools and Libraries used in RSFC
 
+- beautify js
 - ace.js code editor
 - jszip
 - filesaver
