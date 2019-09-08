@@ -19,10 +19,10 @@
   "author": "ronaldaug",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10",
-    "opn-cli": "^4.0.0"
+    "nodemon": "^1.19.2",
+    "opn-cli": "^4.1.0"
   }
 }
