@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>sh0p - Category Slider Section (LTR)</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css'>
+<style>
+#product-list-one .tns-outer{
+  position:relative;
+}
+#product-list-one .tns-outer .tns-controls{
+  width:100%;
+}
+#product-list-one .tns-outer .tns-controls button{
+  margin:4px;
+  position:absolute;
+  z-index:9;
+  top:4px;
+}
+#product-list-one .tns-outer .tns-controls button:first-child{
+  left:-100px;
+}
+
+#product-list-one .tns-outer .tns-controls button:last-child{
+  left:-60px;
+}
+</style>
+</head>
+<body>
+<!-- html -->
+<section id="product-list-one">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-4">
+          <h4 class="mt-4">Women</h4>
+          <img class="img-fluid" src="https://static-01.shop.com.mm/p/0a92eba12ffe6c7f41469e57837607c3.jpg" alt="women-fashion">
+        </div>
+        <div class="col-md-8">
+
+          <div class="category-slider">
+
+            <!-- women slider -->
+          <div class="slide">
+            <div class="row">
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/400/300" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/400/302" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/400/301" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/401/300" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/402/302" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/403/301" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="row">
+              <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/400/300" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/400/302" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/400/301" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/401/300" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/402/302" alt="">
+              </div>
+         <div class="col-md-4 my-2">
+                <img class="img-fluid" src="https://picsum.photos/403/301" alt="">
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      </div>
+</section>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js'></script>
+  <script>
+  tns({
+  "container": ".category-slider",
+  "items": 1,
+  "mouseDrag": true,
+  "slideBy": "page",
+  "gutter":10,
+  "speed": 400,
+  "nav":false,
+  "rewind":true,
+  "autoplay":true,
+  "autoplayButtonOutput":false,
+  "controlsText":["<i class='la la-angle-left'></i>","<i class='la la-angle-right'></i>"],
+  "lazyload":true
+})
+  </script>
+
+</body>
+</html>
