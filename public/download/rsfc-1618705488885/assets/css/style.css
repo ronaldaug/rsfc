@@ -1,0 +1,110 @@
+
+    /* ========================
+    Global CSS
+    =========================*/
+    body{
+        margin:0;
+        font-size:16px;
+        color:#728496;
+        font-family: 'Roboto', sans-serif;
+        font-weight:300;
+        overflow-x:hidden;
+        box-sizing:border-box;
+        background:#f6f7f9;
+    }
+    section{
+        padding:40px 0 40px;
+    }
+    section[id^="menu-"]{
+        padding:0;
+      }
+    .section-title{
+        color:#262e41;
+        margin:40px 0 40px;
+      }
+
+      @media (max-width:576px){
+          .section-title{
+              margin:20px 4px 20px;
+          }
+          section{
+              padding:20px 4px 20px;
+          }
+      }
+    
+/* ==== Start header-two css */
+        
+:root{
+  --dark-color:#373f50;
+  --hover-color:#007bff;
+}
+
+body{
+  font-family:'Roboto', sans-serif;
+}
+
+.bg-dark{
+  background:var(--dark-color);
+  color:#fff;
+}
+.bg-dark a{
+   color:#fff;
+   text-decoration:none;
+}
+.bg-dark a:hover{
+  color:var(--hover-color);
+  outline:none;
+  text-decoration:none;
+}
+
+/* Topbar */
+#top-bar{
+  padding:0 10px;
+  height:60px;
+  line-height:60px;
+}
+
+#top-bar .languages{
+  margin-top:.6rem;
+}
+
+/* ==== End header-two css */
+
+/* ==== Start product-list-two css */
+        
+    #product-list-two .tns-outer {
+      position: relative;
+    }
+
+    #product-list-two .tns-outer .tns-controls {
+      width: 100%;
+    }
+
+    #product-list-two .tns-outer .tns-controls button {
+      margin: 4px;
+      position: absolute;
+      z-index: 9;
+      top: 4px;
+      border: 1px solid #eee;
+    }
+
+    #product-list-two .tns-outer .tns-controls button:first-child {
+      right: -60px;
+    }
+
+    #product-list-two .tns-outer .tns-controls button:last-child {
+      right: -100px;
+    }
+  
+/* ==== End product-list-two css */
+
+/* ==== Start footer-one css */
+        
+        #footer{
+            background:#444;
+        }
+        #footer p, #footer a{
+            color:#fff;
+        }
+    
+/* ==== End footer-one css */

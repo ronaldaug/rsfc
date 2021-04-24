@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resuable single file component</title>
+    <link rel="stylesheet" href="css/cirrus.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+
+    <style>
+        .ph-class {
+            border: 2px dashed #ddd;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .res-btn {
+            padding-top: 10px !important;
+        }
+
+        .sortTableTwo div i.fa-times {
+            display: none;
+        }
+
+        .sortTableTwo div:hover {
+            cursor: move;
+        }
+
+        div i.fa:hover {
+            cursor: pointer;
+        }
+
+        div.sortTable:empty {
+            position: relative;
+        }
+
+        div.sortTable:empty::after {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            content: "Drag and drop here";
+        }
+
+        .sidebar {
+            transition: all ease 0.4s;
+            z-index: 5;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 140px;
+        }
+
+        .sidebar.hide {
+            transition: all ease 0.4s;
+            z-index: 5;
+            position: fixed;
+            top: 60px;
+            right: -140px;
+        }
+
+        .section-panel {
+            transition: all ease 0.4s;
+            z-index: 5;
+            position: fixed;
+            top: 60px;
+            right: 150px;
+            width: 300px;
+        }
+
+        .section-panel.hide {
+            transition: all ease 0.4s;
+            z-index: 5;
+            position: fixed;
+            top: 60px;
+            right: -340px;
+        }
+
+        .iframe-preview {
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+            width: 230px;
+            padding-right: 30px;
+            height: 160px;
+            position: absolute;
+            top: 10px;
+            right: 310px;
+            border: 4px solid #fff;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: block;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .topbar {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .topbar div {
+            margin: 2px;
+            width: 10px;
+            height: 10px;
+        }
+
+        .preview {
+            transition: all ease 0.4s;
+        }
+
+        .edit-panel{
+            position: fixed;
+            top:50px;
+            left:0;
+            width: 100vw;
+            height: 90vh;
+        }
+
+        .edit-btn.active .fa-edit,
+        .edit-btn .fa-times,
+        .sidebar-btn.active .fa-cog,
+        .sidebar-btn .fa-times {
+            display: none;
+        }
+
+        .edit-btn .fa-edit,
+        .edit-btn.active .fa-times,
+        .sidebar-btn .fa-cog,
+        .sidebar-btn.active .fa-times {
+            display: block;
+        }
+
+        .section-btn.active .fa-angle-down,
+        .section-btn .fa-angle-left {
+            display: none;
+        }
+
+        .section-btn .fa-angle-down,
+        .section-btn.active .fa-angle-left {
+            display: inline-block;
+        }
+
+        li.menu-item.active {
+            color: var(--cirrus-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header unselectable header-animated">
+        <div class="header-brand">
+            <div class="nav-item no-hover">
+                <a>
+                    <h6 class="title">RSFC</h6>
+                </a>
+            </div>
+            <div class="nav-item nav-btn" id="header-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header-nav" id="header-menu">
+            <div class="nav-left">
+                <div class="nav-item res-full-btn">
+                    <a href="#"><i class="fa fa-desktop fa-2x"></i></a>
+                </div>
+                <div class="nav-item res-tablet-btn">
+                    <a href="#"><i class="fa fa-tablet fa-2x"></i></a>
+                </div>
+                <div class="nav-item res-mobile-btn">
+                    <a href="#"><i class="fa fa-mobile fa-2x"></i></a>
+                </div>
+                <!-- <div class="nav-item has-sub toggle-hover" id="dropdown">
+                    <a class="nav-dropdown-link">More</a>
+                    <ul class="dropdown-menu dropdown-animated" role="menu">
+                        <li role="menu-item"><a href="#">Our Story</a></li>
+                        <li role="menu-item"><a href="#">Our Mission</a></li>
+                        <li role="menu-item"><a href="#">The Team</a></li>
+                    </ul>
+                </div> -->
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-item download-btn">
+                    <i class="fa fa-download fa-2x"></i>
+                </div>
+                <div class="nav-item edit-btn">
+                    <i class="fa fa-edit fa-2x"></i>
+                    <i class="fa fa-times fa-2x"></i>
+                </div>
+                <div class="nav-item sidebar-btn">
+                    <i class="fa fa-cog fa-2x"></i>
+                    <i class="fa fa-times fa-2x"></i>
+                </div>
+
+                <!-- <div class="form-group">
+                    <input type="search" class="form-group-input" placeholder="Search">
+                    <button class="form-group-btn">Go</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar hide">
+        <div class="frame bg-gray-000">
+            <div class="frame__header">
+                <p class="title m-0">Menu</p>
+            </div>
+            <div class="frame__body">
+                <ul class="menu">
+                    <li class="menu-item section-btn">
+                        <i class="fa fa-angle-down mr-1"></i>
+                        <i class="fa fa-angle-left mr-1"></i>
+                        Sections</li>
+                </ul>
+            </div>
+            <div class="frame-footer"></div>
+        </div>
+        <div class="section-panel row hide">
+            <div class="iframe-preview hide"></div>
+            <div class="sortTable bg-gray-100 col-6"></div>
+            <div class="sortTableTwo bg-gray-100 col-6"></div>
+        </div>
+    </div>
+
+    <div class="u-flex u-center h-100">
+        <div class="preview w-90 h-100">
+            <div class="u-flex topbar bg-gray-100 p-1">
+                <div class="u-circle bg-red-400"></div>
+                <div class="u-circle bg-yellow-400"></div>
+                <div class="u-circle bg-green-400"></div>
+            </div>
+            <iframe class="iframe w-100 h-100" scrolling="yes"></iframe>
+        </div>
+    </div>
+
+    <div class="edit-panel bg-light hide">
+        <h4>Edit Panel</h4>
+    </div>
+
+    <script src="lib/html5sortable.min.js"></script>
+
+    <script>
+        const preview = document.querySelector('.preview');
+        const iFrame = document.querySelector('.iframe');
+        const iframeDoc = iFrame.contentWindow.document;
+        const sidebar = document.querySelector(".sidebar");
+        const sideBarToggleBtn = document.querySelector(".sidebar-btn");
+        const sectionToggleBtn = document.querySelector(".section-btn");
+        const sectionPanel = document.querySelector(".section-panel");
+        const editPanel = document.querySelector(".edit-panel");
+        const editBtn = document.querySelector(".edit-btn");
+        const downloadBtn = document.querySelector(".download-btn");
+
+        HTMLElement.prototype.hasClass = function (cls) {
+            let i;
+            let classes = this.className.split(" ");
+            for (i = 0; i < classes.length; i++) {
+                if (classes[i] == cls) {
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        HTMLElement.prototype.addClass = function (add) {
+            if (!this.hasClass(add)) {
+                this.className = (this.className + " " + add).trim();
+            }
+        };
+
+        HTMLElement.prototype.removeClass = function (remove) {
+            let newClassName = "";
+            let i;
+            let classes = this.className.replace(/\s{2,}/g, ' ').split(" ");
+            for (i = 0; i < classes.length; i++) {
+                if (classes[i] !== remove) {
+                    newClassName += classes[i] + " ";
+                }
+            }
+            this.className = newClassName.trim();
+        };
+
+        /**
+         * Remove duplicated links
+         * @param {Array} e
+         */
+        function removeDuplicateLinks(e) { let n = [], u = []; e.map(e => { e.map(e => { n.includes(e.name) || (n.push(e.name), u.push(e)) }) }); return Array.from(new Set(u)) }
+
+        const uid = () => {
+            return Math.random().toString(36).substr(2, 9);
+        }
+
+        const downloadFile = (url)=>{
+            let link=document.createElement('a');
+            link.href = url;
+            link.download = url.substr(url.lastIndexOf('/') + 1);
+            link.click();
+        }
+
+        const runSortableFuncs = () => {
+            sortable('.sortTable', {
+                acceptFrom: '.sortTable,.sortTableTwo',
+                placeholderClass: 'ph-class'
+            });
+            sortable('.sortTableTwo', {
+                acceptFrom: false,
+                copy: true,
+                forcePlaceholderSize: true
+            });
+            sortable('.sortTable')[0].addEventListener('sortstop', function (e) {
+                getOrderedNames();
+            })
+        }
+
+        const writeToIframe = (data) => {
+            iframeDoc.open();
+            iframeDoc.write(data);
+            iframeDoc.close();
+        }
+
+        const fetchData = async (names,route) => {
+            if (names.length == 0) return;
+            const e = await fetch(route, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ names })
+            })
+            return await e.json();
+        }
+
+        const getOrderedNames = async() => {
+            let allDrops = document.querySelectorAll('.sortTable div');
+            let orderedNames = [];
+            allDrops.forEach(e => {
+                orderedNames.push(e.innerHTML.split(" ")[0])
+            })
+
+            if (orderedNames.length == 0) {
+                writeToIframe('');
+            }
+
+            const res = await fetchData(orderedNames,'/api/orderednames');
+            const html = res.data;
+            writeToIframe(html);
+
+            // save
+            localStorage.setItem('items', JSON.stringify(orderedNames));
+        }
+
+        const deleteThis = (i) => {
+            const list = document.querySelector(".sortTable #list" + i);
+            list.outerHTML = '';
+            getOrderedNames();
+        }
+
+        const getFileNames = async () => {
+
+                   const e = await fetch('/api/filenames');
+            const { data } = await e.json();
+
+            const fileNames = document.querySelector('.sortTableTwo');
+
+            const res = data.map((e, i) => `<div id="list${i}" class="text-gray-000 bg-danger p-2 u-flex u-justify-space-between">${e} <i onclick="deleteThis(${i})" class="fa fa-times"></i></div>`).join("");
+            fileNames.innerHTML = res;
+
+            setTimeout(() => {
+                runSortableFuncs();
+                previewComponents();
+            }, 300)
+
+        }
+
+        getFileNames();
+
+        /**
+        * Edit Panel
+        */
+        editBtn.addEventListener("click", () => {
+            editBtn.classList.toggle("active");
+            editPanel.classList.toggle("hide");
+        })
+
+        /**
+        * Download Btn
+        */
+        downloadBtn.addEventListener("click", async() => {
+                const allDrops = document.querySelectorAll('.sortTable div');
+            const orderedNames = [];
+            allDrops.forEach(e => {
+                orderedNames.push(e.innerHTML.split(" ")[0])
+            })
+            if(orderedNames.length == 0){
+                alert("Please add at least one section")
+                return;
+            }
+            const res = await fetchData(orderedNames,'/api/download');
+            if(res.status !== 200){
+                alert('failed to download');
+                return;
+            }
+            const {download_link} = res.data;
+            downloadFile(download_link);
+        })
+
+        /**
+        * Section Panel
+        */
+        sectionToggleBtn.addEventListener("click", () => {
+            sectionToggleBtn.classList.toggle("active");
+            sectionPanel.classList.toggle("hide");
+        })
+
+        // SideBar
+        sideBarToggleBtn.addEventListener("click", () => {
+            if (sideBarToggleBtn.hasClass("active")) {
+                sideBarToggleBtn.removeClass("active")
+                sidebar.addClass("hide");
+                sectionToggleBtn.removeClass("active");
+                sectionPanel.addClass("hide");
+                return;
+            }
+
+            sideBarToggleBtn.addClass("active");
+            sectionToggleBtn.addClass("active");
+            sidebar.removeClass("hide");
+            sectionPanel.removeClass("hide");
+        })
+
+        const toggleScreenSize = () => {
+
+            document.querySelector('.res-mobile-btn').addEventListener("click", () => {
+                preview.removeClass("w-90")
+                preview.removeClass("w-60")
+                if (preview.hasClass("w-30")) return;
+                preview.addClass("w-30");
+            })
+
+            document.querySelector(".res-tablet-btn").addEventListener("click", () => {
+                preview.removeClass("w-90")
+                preview.removeClass("w-30")
+                if (preview.hasClass("w-60")) return;
+                preview.addClass("w-60");
+            })
+
+            document.querySelector(".res-full-btn").addEventListener("click", () => {
+                preview.removeClass("w-30")
+                preview.removeClass("w-60")
+                if (preview.hasClass("w-90")) return;
+                preview.addClass("w-90");
+            })
+
+        }
+
+        toggleScreenSize()
+
+
+        const previewComponents = () => {
+
+            const allComponents = document.querySelectorAll(".sortTableTwo div");
+            const iframe = document.createElement("iframe");
+            iframe.setAttribute("style", "width:1000px;height:2000px;transform:scale(0.22);transform-origin:0 0;border:0px #FFFFFF none;");
+            iframe.setAttribute("marginheight", "0");
+            iframe.setAttribute("marginwidth", "0");
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute("scrolling", "no");
+            const iframePreview = document.querySelector(".iframe-preview");
+
+            allComponents.forEach(a => {
+                a.addEventListener("mouseover", e => {
+                    iframePreview.removeClass('hide');
+                    iframe.src = 'components/'+e.target.innerText+'.html';
+                    iframePreview.innerHTML = iframe.outerHTML;
+                })
+                a.addEventListener("mouseout", () => {
+                    iframePreview.addClass('hide');
+                    iframePreview.innerHTML = '';
+                })
+            })
+
+        }
+
+
+    </script>
+</body>
+
+</html>

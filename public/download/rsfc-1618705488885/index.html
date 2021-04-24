@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resuable single file component</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FrDH/mmenu-light/dist/mmenu-light.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+
+    <!-- ==== Start header-two section  ==== -->
+    <section id="head">
+      <!-- topbar -->
+      <div id="top-bar" class="d-flex justify-content-between bg-dark">
+
+        <div class="support">
+          <a href="#"><i class="la la-phone"></i> +959401623553</a>
+        </div>
+
+        <div class="tracking-order">
+          <a href="#">
+            <i class="la la-car"></i> Tracking Order
+          </a>
+        </div>
+
+        <div class="languages">
+          <select name="language" class="form-control">
+            <option value="eng">🇺🇸 English</option>
+            <option value="mm">🇲🇲 Myanmar</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- header -->
+      <header class="d-none d-lg-block">
+        <!-- bootstrap menu -->
+        <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">RSFC</a>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+
+      </header>
+
+      <a href="#menu" class="btn btn-default d-lg-none"><i class="la la-bars"></i></a>
+      <nav id="menu" class="d-lg-none">
+        <ul>
+          <li class="Selected"><a href="#">Home</a></li>
+          <li><span>About us</span>
+            <ul>
+              <li><a href="#about/history">History</a></li>
+              <li><span>The team</span>
+                <ul>
+                  <li><a href="#about/team/management">Management</a></li>
+                  <li><a href="#about/team/sales">Sales</a></li>
+                  <li><a href="#about/team/development">Development</a></li>
+                </ul>
+              </li>
+              <li><a href="#about/address">Our address</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </section>
+    <!-- ====  End header-two section ==== -->
+
+    <!-- ==== Start product-list-two section  ==== -->
+    <section id="product-list-two">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="category-slider-two">
+
+              <!-- women slider -->
+              <div class="slide">
+                <div class="row">
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/1.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/2.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/3.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/4.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/5.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/6.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="row">
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/1.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/2.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/3.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/4.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/5.jpg" alt="">
+                  </div>
+                  <div class="col-md-4 my-2">
+                    <img class="img-fluid" src="assets/images/6.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+
+            <h4 class="mt-4 float-right">Men</h4>
+            <img class="img-fluid" src="https://www.thefashionisto.com/wp-content/uploads/2019/07/Latin-Male-Model-Double-Denim-Style.jpg" alt="men-fashion">
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====  End product-list-two section ==== -->
+
+    <!-- ==== Start footer-one section  ==== -->
+    <section id="footer">
+      <div class="footer container p-5">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="about">
+              <h4 class="text-white">About RSFC</h4>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure incidunt aliquam nisi nulla et architecto facere, fugiat nobis cumque, exercitationem sit corporis quos ab asperiores saepe. Magni consequatur rerum error, aperiam officiis saepe itaque rem ex provident fugiat suscipit in.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li><a href="#">Lorem, ipsum dolor.</a></li>
+              <li><a href="#">Lorem, ipsum dolor.</a></li>
+              <li><a href="#">Lorem, ipsum dolor.</a></li>
+              <li><a href="#">Lorem, ipsum dolor.</a></li>
+              <li><a href="#">Lorem, ipsum dolor.</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <div class="gallery">
+              <div class="row">
+                <div class="col-6">
+                  <img class="img-fluid m-2" src="assets/images/1.jpg" alt="pic-1">
+                </div>
+                <div class="col-6">
+                  <img class="img-fluid m-2" src="assets/images/2.jpg" alt="pic-2">
+                </div>
+                <div class="col-6">
+                  <img class="img-fluid m-2" src="assets/images/3.jpg" alt="pic-3">
+                </div>
+                <div class="col-6">
+                  <img class="img-fluid m-2" src="assets/images/4.jpg" alt="pic-4">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====  End footer-one section ==== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/FrDH/mmenu-light/dist/mmenu-light.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+
+
+    <script src="assets/js/main.js"></script>
+  </body>
+
+</html>

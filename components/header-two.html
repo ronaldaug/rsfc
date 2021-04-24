@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RSFC - Header Section</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/FrDH/mmenu-light/dist/mmenu-light.css'>
+<style>
+:root{
+  --dark-color:#373f50;
+  --hover-color:#007bff;
+}
+
+body{
+  font-family:'Roboto', sans-serif;
+}
+
+.bg-dark{
+  background:var(--dark-color);
+  color:#fff;
+}
+.bg-dark a{
+   color:#fff;
+   text-decoration:none;
+}
+.bg-dark a:hover{
+  color:var(--hover-color);
+  outline:none;
+  text-decoration:none;
+}
+
+/* Topbar */
+#top-bar{
+  padding:0 10px;
+  height:60px;
+  line-height:60px;
+}
+
+#top-bar .languages{
+  margin-top:.6rem;
+}
+</style>
+</head>
+<body>
+
+<section id="head">
+  <!-- topbar -->
+<div id="top-bar" class="d-flex justify-content-between bg-dark">
+
+  <div class="support">
+    <a href="#"><i class="la la-phone"></i> +959401623553</a>
+  </div>
+
+  <div class="tracking-order">
+    <a href="#">
+      <i class="la la-car"></i> Tracking Order
+    </a>
+  </div>
+
+  <div class="languages">
+    <select name="language" class="form-control">
+      <option value="eng">🇺🇸 English</option>
+      <option value="mm">🇲🇲 Myanmar</option>
+    </select>
+  </div>
+
+</div>
+
+<!-- header -->
+<header class="d-none d-lg-block">
+  <!-- bootstrap menu -->
+  <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">RSFC</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+</header>
+
+<a href="#menu" class="btn btn-default d-lg-none"><i class="la la-bars"></i></a>
+				<nav id="menu" class="d-lg-none">
+					<ul>
+						<li class="Selected"><a href="#">Home</a></li>
+						<li><span>About us</span>
+							<ul>
+								<li><a href="#about/history">History</a></li>
+								<li><span>The team</span>
+									<ul>
+										<li><a href="#about/team/management">Management</a></li>
+										<li><a href="#about/team/sales">Sales</a></li>
+										<li><a href="#about/team/development">Development</a></li>
+									</ul>
+								</li>
+								<li><a href="#about/address">Our address</a></li>
+							</ul>
+						</li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+
+</section>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/FrDH/mmenu-light/dist/mmenu-light.js'></script>
+<script>
+  var menu = new MmenuLight(document.querySelector("#menu"), "all");
+
+var navigator = menu.navigation({
+  // selectedClass: 'Selected',
+  // slidingSubmenus: true,
+  // theme: 'dark',
+  // title: 'Menu'
+});
+
+var drawer = menu.offcanvas({
+  // position: 'right'
+});
+
+//	Open the menu.
+document.querySelector('a[href="#menu"]').addEventListener("click", (evnt) => {
+  evnt.preventDefault();
+  drawer.open();
+});
+</script>
+</body>
+</html>

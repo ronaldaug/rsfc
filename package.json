@@ -1,0 +1,28 @@
+{
+  "name": "rsfc",
+  "version": "1.0.0",
+  "description": "reusable single file components",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "reusable",
+    "single",
+    "file",
+    "components",
+    "html",
+    "sections",
+    "builder",
+    "editor"
+  ],
+  "author": "ronaldaug",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs-extra": "^9.1.0",
+    "jsdom": "^16.4.0",
+    "pretty": "^2.0.0",
+    "zip-a-folder": "0.0.12"
+  }
+}

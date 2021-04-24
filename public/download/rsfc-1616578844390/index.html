@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resuable single file component</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/css/froala_blocks.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/froala-editor/css/froala_editor.pkgd.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/froala-editor/css/froala_style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/tui-image-editor.css">
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-color-picker/latest/tui-color-picker.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.1/css/third_party/image_tui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+
+    <!-- ==== Start ct-header section  ==== -->
+    <section id="ct-header" data-block-type="headers" data-id="1" class="fp-active">
+      <div class="container">
+        <nav class="navbar navbar-expand-md">
+          <div class="col fr-box" role="application">
+            <div class="fr-wrapper" dir="auto">
+              <div class="fr-element fr-view" dir="auto" contenteditable="true" aria-disabled="false" spellcheck="true">
+                <p><a class="navbar-brand" href="https://www.froala.com"><img src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//logo.png" height="30" alt="image"></a></p>
+              </div>
+            </div>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse fr-box" id="navbarNav1" role="application">
+            <div class="fr-wrapper" dir="auto">
+              <div class="fr-element fr-view" dir="auto" contenteditable="true" aria-disabled="false" spellcheck="true">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active"><a class="nav-link" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;">Home&nbsp;<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;">Features</a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;">Pricing</a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;">Team</a></li>
+                </ul>
+                <ul class="navbar-nav justify-content-end d-none d-lg-flex ml-md-auto">
+                  <li class="nav-item"><a class="nav-link" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;"><svg class="svg-inline--fa fa-slack fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="slack" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor" d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z">
+                        </path>
+                      </svg><!-- <i class="fab fa-slack"></i> --></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;"><svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" data-prefix="fab" data-icon="twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                        <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                        </path>
+                      </svg><!-- <i class="fab fa-twitter"></i> --></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;"><svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" data-prefix="fab" data-icon="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
+                        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                        </path>
+                      </svg><!-- <i class="fab fa-github"></i> --></a></li>
+                </ul>
+                <p><a class="btn btn-outline-primary ml-md-3" href="https://www.froala.com" contenteditable="true" style="outline: none; display: inline-block;">Button</a></p>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div id="trial_popup">
+          <div class="modal popupp fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <!-- Modal body -->
+                <div class="modal-body paddremov">
+                  <div class="try_fro">
+                    <h1>Try Froala Editor</h1>
+                    <p><b>For Free</b></p>
+                  </div>
+                  <div class="try_fro_content">
+                    <p>Start your trial today and receive <b>7 days of free technical support </b> to get you started.
+                    </p>
+                  </div>
+                  <div class="try_fro_content_bottom">
+                    <p>Here are some of the benefits you'll get from using froala WYSIWIG Editor:</p>
+                  </div>
+                  <div class="try_fro_content_footer">
+                    <ul>
+                      <li>7 days of free technical support</li>
+                      <li>Developer Friendly</li>
+                      <li>Out-of-the-box plugins</li>
+                      <li>Easy to Extend</li>
+                    </ul>
+                    <div class="download_botton">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="downloadEditor()">
+                        Download <br> now!
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal footer -->
+              </div>
+            </div>
+          </div>
+          <div class="modal popupp fade" id="myModal2">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <!-- Modal body -->
+                <div class="modal-body paddremov">
+                  <div class="try_fro">
+                    <p><b>Your trial period has expired</b></p>
+                  </div>
+                  <div class="try_fro_content">
+                    <p></p>
+                  </div>
+                  <div class="try_fro_content_bottom">
+                    <p></p>
+                  </div>
+                  <div class="try_fro_content_footer">
+                    <ul>
+                    </ul>
+                    <div class="download_botton">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="window.open('https://froala.com/wysiwyg-editor/pricing/')">
+                        Purchase Now!
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal footer -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="trial_popup">
+          <div class="modal popupp fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <!-- Modal body -->
+                <div class="modal-body paddremov">
+                  <div class="try_fro">
+                    <h1>Try Froala Editor</h1>
+                    <p><b>For Free</b></p>
+                  </div>
+                  <div class="try_fro_content">
+                    <p>Start your trial today and receive <b>7 days of free technical support </b> to get you started.
+                    </p>
+                  </div>
+                  <div class="try_fro_content_bottom">
+                    <p>Here are some of the benefits you'll get from using froala WYSIWIG Editor:</p>
+                  </div>
+                  <div class="try_fro_content_footer">
+                    <ul>
+                      <li>7 days of free technical support</li>
+                      <li>Developer Friendly</li>
+                      <li>Out-of-the-box plugins</li>
+                      <li>Easy to Extend</li>
+                    </ul>
+                    <div class="download_botton">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="downloadEditor()">
+                        Download <br> now!
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal footer -->
+              </div>
+            </div>
+          </div>
+          <div class="modal popupp fade" id="myModal2">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <!-- Modal body -->
+                <div class="modal-body paddremov">
+                  <div class="try_fro">
+                    <p><b>Your trial period has expired</b></p>
+                  </div>
+                  <div class="try_fro_content">
+                    <p></p>
+                  </div>
+                  <div class="try_fro_content_bottom">
+                    <p></p>
+                  </div>
+                  <div class="try_fro_content_footer">
+                    <ul>
+                    </ul>
+                    <div class="download_botton">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="window.open('https://froala.com/wysiwyg-editor/pricing/')">
+                        Purchase Now!
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal footer -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====  End ct-header section ==== -->
+
+    <!-- ==== Start ct-footer section  ==== -->
+    <section id="ct-footer" class="fdb-block footer-large fp-active" data-block-type="footers" data-id="2">
+      <div class="container">
+        <div class="row align-items-top text-center">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-sm-left">
+            <h3><strong>Group 1</strong></h3>
+            <nav class="nav flex-column">
+              <a class="nav-link active" href="https://www.froala.com">Home</a>
+              <a class="nav-link" href="https://www.froala.com">Features</a>
+              <a class="nav-link" href="https://www.froala.com">Pricing</a>
+              <a class="nav-link" href="https://www.froala.com">Team</a>
+              <a class="nav-link" href="https://www.froala.com">Contact Us</a>
+            </nav>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5 mt-sm-0 text-sm-left">
+            <h3><strong>Group 2</strong></h3>
+            <nav class="nav flex-column">
+              <a class="nav-link active" href="https://www.froala.com">Privacy Policy</a>
+              <a class="nav-link" href="https://www.froala.com">Terms</a>
+              <a class="nav-link" href="https://www.froala.com">FAQ</a>
+              <a class="nav-link" href="https://www.froala.com">Support</a>
+            </nav>
+          </div>
+
+          <div class="col-12 col-md-4 col-lg-3 text-md-left mt-5 mt-md-0">
+            <h3><strong>About Us</strong></h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+              blind texts.</p>
+          </div>
+
+          <div class="col-12 col-lg-2 ml-auto text-lg-left mt-4 mt-lg-0">
+            <h3><strong>Follow Us</strong></h3>
+            <p class="lead">
+              <a href="https://www.froala.com" class="mx-2"><svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                  <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                  </path>
+                </svg><!-- <i class="fab fa-twitter" aria-hidden="true"></i> --></a>
+              <a href="https://www.froala.com" class="mx-2"><svg class="svg-inline--fa fa-facebook fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                  <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z">
+                  </path>
+                </svg><!-- <i class="fab fa-facebook" aria-hidden="true"></i> --></a>
+              <a href="https://www.froala.com" class="mx-2"><svg class="svg-inline--fa fa-instagram fa-w-14" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                  <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                  </path>
+                </svg><!-- <i class="fab fa-instagram" aria-hidden="true"></i> --></a>
+              <a href="https://www.froala.com" class="mx-2"><svg class="svg-inline--fa fa-pinterest fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="pinterest" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
+                  <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z">
+                  </path>
+                </svg><!-- <i class="fab fa-pinterest" aria-hidden="true"></i> --></a>
+              <a href="https://www.froala.com" class="mx-2"><svg class="svg-inline--fa fa-google fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" data-fa-i2svg="">
+                  <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z">
+                  </path>
+                </svg><!-- <i class="fab fa-google" aria-hidden="true"></i> --></a>
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col text-center">
+            © 2018 Froala. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====  End ct-footer section ==== -->
+
+    <!-- ==== Start ct-footer-black section  ==== -->
+    <section id="ct-footer-black" class="fdb-block footer-large bg-dark fp-active" data-block-type="footers" data-id="3">
+      <div class="container">
+        <div class="row align-items-top text-center text-md-left">
+          <div class="col-12 col-sm-6 col-md-4">
+            <h3><strong>Country A</strong></h3>
+            <p>Street Address 52<br>Contact Name</p>
+            <p>+44 827 312 5002</p>
+            <p><a href="https://www.froala.com">countrya@amazing.com</a></p>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0">
+            <h3><strong>Country B</strong></h3>
+            <p>Street Address 100<br>Contact Name</p>
+            <p>+13 827 312 5002</p>
+            <p><a href="https://www.froala.com">countryb@amazing.com</a></p>
+          </div>
+
+          <div class="col-12 col-md-4 mt-5 mt-md-0 text-md-left">
+            <h3><strong>About Us</strong></h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+              live the blind texts.</p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col text-center">
+            © 2018 Froala. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====  End ct-footer-black section ==== -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/froala-editor/js/froala_editor.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.7/fabric.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tui-code-snippet@1.4.0/dist/tui-code-snippet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/tui-image-editor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.1/js/third_party/image_tui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.2.2/js/third_party/font_awesome.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/fontawesome.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/brands.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/solid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/v4-shims.min.js"></script>
+
+
+    <script src="assets/js/main.js"></script>
+  </body>
+
+</html>

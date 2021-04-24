@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RSFC - Slider Section</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css'>
+<style>
+/* ========================== */
+/* Slider
+/* =========================== */
+
+#slider-ow .slide img{
+  width:100%;
+}
+#slider-ow.tns-outer{
+  position:relative;
+}
+
+#slider-ow .tns-controls{
+  width:100%;
+  position:absolute;
+  top:300px;
+  left:0;
+  z-index:9;
+}
+
+#slider-ow .tns-controls button{
+  transition:all ease 0.4s;
+  opacity:0;
+  width:40px;
+  height:40px;
+  text-align:center;
+  transform:scale(0.1);
+  border-radius:100%;
+  border:0;
+}
+
+#slider-ow.tns-outer:hover .tns-controls button{
+  opacity:1;
+  transform:scale(1);
+}
+
+#slider-ow .tns-controls button:focus{
+  outline:none;
+  box-shadow:none;
+}
+
+#slider-ow .tns-controls button:hover{
+  background:#000;
+  color:#fff;
+}
+
+#slider-ow .tns-controls button:first-child{
+  position:absolute;
+  left:20px;
+}
+
+#slider-ow .tns-controls button:last-child{
+  position:absolute;
+  right:20px;
+}
+
+#slider-ow .slide{
+  position:relative;
+  max-height:600px;
+}
+
+#slider-ow .slide .caption-title,
+#slider-ow .slide .caption,
+#slider-ow .slide .shop-now{
+  position:absolute;
+  left:100px;
+  z-index:1;
+}
+
+#slider-ow .slide .caption-title,
+#slider-ow .slide .caption{
+  color:#fff;
+  padding:4px;
+}
+
+#slider-ow .slide .caption-title{
+  font-weight:bold;
+  bottom:320px;
+  font-size:2rem;
+}
+#slider-ow .slide .caption{
+  bottom:260px;
+  font-size:1.4rem;
+}
+
+#slider-ow .slide .shop-now{
+  bottom:180px;
+}
+
+
+/* Animations */
+#slider-ow .tns-slide-active .delay-1{
+  animation-delay:.5s;
+}
+#slider-ow .tns-slide-active .delay-2{
+  animation-delay:1s;
+}
+#slider-ow .tns-slide-active .from-top {
+  -webkit-animation-name: from-top;
+  animation-name: from-top;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes from-top {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+  @keyframes from-top {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- html -->
+<section id="slider">
+  <div class="slide">
+    <img src="assets/images/1.jpg" alt="slide-one">
+    <p class="caption-title from-top">Women Fashion</p>
+    <p class="caption from-top delay-1">Get 5% OFF for this month.</p>
+    <p class="shop-now from-top delay-2"><button class="btn btn-primary"><i class="la la-shopping-cart"></i> Shop Now</button></p>
+  </div>
+  <div class="slide">
+    <img src="assets/images/2.jpg" alt="slide-two">
+     <p class="caption-title from-top">Women Fashion</p>
+    <p class="caption from-top delay-1">Get 5% OFF for this month.</p>
+    <p class="shop-now from-top delay-2"><button class="btn btn-primary"><i class="la la-shopping-cart"></i> Shop Now</button></p>
+  </div>
+  <div class="slide">
+    <img src="assets/images/3.jpg" alt="slide-three">
+    <p class="caption-title from-top">Women Fashion</p>
+    <p class="caption from-top delay-1">Get 5% OFF for this month.</p>
+    <p class="shop-now from-top delay-2"><button class="btn btn-primary"><i class="la la-shopping-cart"></i>  Shop Now</button></p>
+  </div>
+</section>
+
+<!-- javascript -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js'></script>
+  <script>
+  tns({
+  "container": "#slider",
+  "items": 1,
+  "mouseDrag": true,
+  "slideBy": "page",
+  "speed": 400,
+  "rewind":true,
+  "nav":false,
+  "autoplay":true,
+  "autoplayButton":false,
+  "autoplayButtonOutput":false,
+  "controlsText":["<i class='la la-angle-left'></i>","<i class='la la-angle-right'></i>"],
+  "lazyload":true
+})
+  </script>
+
+</body>
+</html>
