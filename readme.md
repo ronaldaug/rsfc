@@ -32,7 +32,7 @@ Part 1 - CSS codes
 
  Part 2 - HTML codes
  ```html
- <section>
+ <section id="blog">
         <!-- html -->
  </section>
  ```
