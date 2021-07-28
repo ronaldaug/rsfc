@@ -36,6 +36,7 @@ Part 1 - CSS codes
         <!-- html -->
  </section>
  ```
+> Make sure to add a **unique section id**, e.g `<section id="blog">`
 
  Part 3 - JS codes
  ```javascript
